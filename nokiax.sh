@@ -64,14 +64,24 @@ echo
 echo "Waiting for device..."
 
 while true; do
-  if adb devices | grep -q "\tdevice"; then
+  DEVICES=$(adb devices | sed 1d | awk '{print $2}')
+
+  if echo "$DEVICES" | grep -qw "device"; then
     echo "✓ Device detected"
     break
   fi
+
+  if echo "$DEVICES" | grep -qw "unauthorized"; then
+    echo "⚠️  Device unauthorized. Check your phone and accept the RSA prompt."
+  fi
+
+  if echo "$DEVICES" | grep -qw "offline"; then
+    echo "⚠️  Device offline. Reconnect USB cable."
+  fi
+
   sleep 2
 done
 
-pause
 
 # STEP 4 — Validate remove list
 if [ ! -f "$REMOVE_LIST" ]; then
