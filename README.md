@@ -1,6 +1,5 @@
 
 <img width="1536" height="605" alt="profile" src="https://github.com/user-attachments/assets/90482c33-e985-4de8-879c-56ab4ff571f2" />
-# NokiaX
 
 **Your smartphone, but dumb again.**
 
