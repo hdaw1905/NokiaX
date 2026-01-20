@@ -1,0 +1,16 @@
+# Core phone apps
+com.android.dialer
+com.android.contacts
+com.android.mms
+com.android.settings
+
+
+# Messaging apps
+com.whatsapp
+com.facebook.orca
+com.imo.android.imoim
+com.tencent.mm
+
+
+# Utilities
+com.google.android.apps.maps
