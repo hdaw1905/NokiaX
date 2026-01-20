@@ -1,0 +1,17 @@
+# Social media
+com.facebook.katana
+com.instagram.android
+com.zhiliaoapp.musically
+com.snapchat.android
+com.twitter.android
+
+
+# Browsers
+com.android.chrome
+com.sec.android.app.sbrowser
+com.opera.browser
+
+
+# Video
+com.google.android.youtube
+com.netflix.mediaclient
