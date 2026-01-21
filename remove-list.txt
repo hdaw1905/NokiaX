@@ -1,17 +1,87 @@
-# Social media
-com.facebook.katana
-com.instagram.android
-com.zhiliaoapp.musically
-com.snapchat.android
-com.twitter.android
-
-
-# Browsers
+# ===== BROWSERS =====
 com.android.chrome
-com.sec.android.app.sbrowser
-com.opera.browser
+com.yandex.browser
 
+# ===== SOCIAL MEDIA =====
+com.facebook.katana
+com.facebook.orca
+com.facebook.services
+com.facebook.system
+ru.mail.mailapp
+ru.yandex.zen
+ru.yandex.searchplugin
 
-# Video
+# ===== VIDEO / STREAMING =====
 com.google.android.youtube
-com.netflix.mediaclient
+com.google.android.videos
+com.google.android.apps.photos
+com.google.android.apps.youtube.music
+
+# ===== CLOUD / FILE SHARING =====
+com.microsoft.skydrive
+ru.yandex.disk
+com.android.bookmarkprovider
+
+# ===== VOICE / ASSISTANT =====
+com.google.android.googlequicksearchbox
+com.google.android.apps.tachyon
+com.google.android.ondevicepersonalization.services
+
+# ===== BLOAT / ANALYTICS =====
+com.samsung.android.rubin.app
+com.samsung.android.smartsuggestions
+com.samsung.android.dynamiclock
+com.samsung.android.privacydashboard
+com.samsung.android.lool
+com.samsung.android.dsms
+com.samsung.android.dqagent
+com.samsung.android.da.daagent
+com.samsung.android.diagmonagent
+com.samsung.android.bbc.bbcagent
+com.sec.android.diagmonagent
+
+# ===== THEMES / VISUAL =====
+com.samsung.android.themestore
+com.samsung.android.themecenter
+com.samsung.android.wallpaper.res
+com.android.wallpaperbackup
+com.android.wallpapercropper
+com.android.wallpaper.livepicker
+com.samsung.android.aremoji
+com.samsung.android.ardrawing
+com.samsung.android.arzone
+
+# ===== SAMSUNG EXTRAS =====
+com.samsung.android.app.spage
+com.samsung.android.app.appsedge
+com.samsung.android.app.clipboardedge
+com.samsung.android.app.smartcapture
+com.samsung.android.app.sharelive
+com.samsung.android.app.updatecenter
+com.samsung.android.aircommandmanager
+com.samsung.android.smartmirroring
+com.samsung.android.allshare.service.fileshare
+com.samsung.android.allshare.service.mediashare
+
+# ===== AD / PROMO =====
+com.samsung.android.app.dressroom
+com.sec.android.app.billing
+com.samsung.android.mobileservice
+
+# ===== PRINTING =====
+com.android.printspooler
+com.android.bips
+
+# ===== GOOGLE EXTRAS =====
+com.google.android.printservice.recommendation
+com.google.android.apps.restore
+com.google.android.apps.turbo
+com.google.android.nearby.halfsheet
+com.google.android.gms.location.history
+
+# ===== VIDEO PLAYER =====
+com.samsung.android.video
+
+# ===== DICTIONARY / OFFICE =====
+com.diotek.sec.lookup.dictionary
+cn.wps.moffice_eng
