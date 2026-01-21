@@ -1,16 +1,104 @@
-# Core phone apps
-com.android.dialer
-com.android.contacts
-com.android.mms
+# ===== CORE ANDROID SYSTEM =====
+android
+com.android.systemui
 com.android.settings
+com.android.phone
+com.android.providers.telephony
+com.android.providers.settings
+com.android.providers.media
+com.android.providers.downloads
+com.android.providers.downloads.ui
+com.android.packageinstaller
+com.google.android.permissioncontroller
+com.google.android.gms
+com.google.android.gsf
+com.google.android.webview
+com.google.android.documentsui
+com.android.certinstaller
+com.android.keychain
+com.android.location.fused
+com.android.shell
+com.android.bluetooth
+com.android.nfc
+com.android.storagemanager
+com.android.vpndialogs
+com.android.htmlviewer
+com.android.emergency
+com.android.server.telecom
+com.android.inputdevices
+com.android.cameraextensions
+com.android.providers.userdictionary
+com.android.calllogbackup
+com.android.backupconfirm
 
+# ===== PHONE / CONTACTS / MESSAGES =====
+com.samsung.android.dialer
+com.samsung.android.messaging
+com.samsung.android.app.contacts
+com.samsung.android.providers.contacts
+com.android.mms.service
 
-# Messaging apps
+# ===== CAMERA / FILES =====
+com.sec.android.app.camera
+com.sec.android.gallery3d
+com.sec.android.app.myfiles
+com.android.externalstorage
+
+# ===== KEYBOARD =====
+com.samsung.android.honeyboard
+
+# ===== NETWORK / CONNECTIVITY =====
+com.android.wifi.dialog
+com.android.wifi.resources
+com.google.android.networkstack
+com.google.android.networkstack.tethering
+com.android.hotspot2.osulogin
+
+# ===== GOOGLE ESSENTIALS =====
+com.google.android.setupwizard
+com.google.android.configupdater
+com.google.android.modulemetadata
+com.google.android.syncadapters.calendar
+com.google.android.feedback
+com.google.android.connectivity.resources
+com.google.android.tts
+
+# ===== SECURITY / KNOX =====
+com.samsung.android.knox.kpecore
+com.samsung.android.knox.pushmanager
+com.samsung.android.knox.attestation
+com.samsung.knox.securefolder
+com.samsung.android.sm.devicesecurity
+
+# ===== YOUR SAFE TOOLS =====
+com.nationaledtech.spinbrowser
+com.safesurfer
+com.openai.chatgpt
+
+# ===== QATAR ESSENTIAL APPS =====
+qa.gov.moi.metrash
+qa.vodafone.myvodafone
+com.gorafeeq.qatar
+qa.hamad.patientapp
+com.snoonu.customerapp
+com.talabat
+com.pozitron.qib
+com.ubercab
+
+# ===== WHATSAPP ONLY (OPTIONAL) =====
 com.whatsapp
-com.facebook.orca
-com.imo.android.imoim
-com.tencent.mm
 
-
-# Utilities
-com.google.android.apps.maps
+# ===== GAMES (KEPT) =====
+com.miniclip.eightballpool
+com.king.candycrushsaga
+com.nordcurrent.canteenhd
+com.tocaboca.tocakitchen2
+com.matteljv.uno
+com.skgames.trafficrider
+com.skgames.trafficracer
+com.vitastudio.mahjong
+com.rovio.baba
+com.cooyostudio.marble.blast
+com.red.sortingstore.android
+io.supercent.pizzaidle
+com.kms.free
