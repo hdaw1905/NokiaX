@@ -1,4 +1,3 @@
-
 <img width="1536" height="605" alt="profile" src="https://github.com/user-attachments/assets/90482c33-e985-4de8-879c-56ab4ff571f2" />
 
 **Your smartphone, but dumb again.**
@@ -98,11 +97,37 @@ NokiaX is designed to keep only essential and functional apps:
 
 ## 🛠 Requirements
 
-- Linux or macOS (Bash shell)  
+### General
 - Android device  
 - USB cable  
 - USB debugging enabled  
-- ADB installed (or NokiaX will try to install it)  
+
+### Linux / macOS
+- Bash shell  
+- Git  
+- Python 3  
+- pip  
+- ADB (or NokiaX will try to install it)
+
+### Windows
+- Git for Windows (to run Bash)  
+  Download: https://git-scm.com/install/windows  
+- Python 3  
+- pip  
+- ADB (or NokiaX will try to install it)
+
+---
+
+## 📦 Python / pip Requirements
+
+Install required Python packages:
+
+    pip install --upgrade pip
+    pip install adb
+
+> Note: pip install adb is unreliable on some systems.  
+> Best practice is installing Android platform-tools manually.  
+> The script attempts both methods.
 
 ---
 
@@ -110,9 +135,11 @@ NokiaX is designed to keep only essential and functional apps:
 
 Clone the repository and prepare the script:
 
-    git clone https://github.com/yourusername/nokiax.git
+    git clone https://github.com/hdaw1905/nokiax.git
     cd nokiax
     chmod +x nokiax.sh
+
+---
 
 ## ▶️ Run NokiaX
 
@@ -128,24 +155,6 @@ NokiaX will:
 - Wait until your phone is connected  
 - Remove predefined apps  
 - Show a congratulations message 🎉  
-
----
-
-##  Make Script Executable
-
-Make the script executable:
-
-    chmod +x nokiax.sh
-
----
-
-## User Workflow (1-Click Experience)
-
-    1) Edit remove-list.txt (optional)
-    2) Double-click nokiax.sh or run:
-       ./nokiax.sh
-    3) Follow on-screen steps
-    4) Done 🎉
 
 ---
 
@@ -207,7 +216,7 @@ All removed apps are saved to:
 
 ---
 
-##  Notes (Important)
+## ⚠️ Notes (Important)
 
 - pip install adb is unreliable on some systems  
 - Best practice is Android platform-tools  
@@ -215,7 +224,7 @@ All removed apps are saved to:
 
 ---
 
-##  v1.1 Ideas
+## 🔮 v1.1 Ideas
 
 - Dry-run mode  
 - Windows .bat version  
@@ -253,4 +262,3 @@ NokiaX — Your smartphone, but dumb again.
 
 Created by Hesham Eina Abdalla  
 Inspired by digital minimalism and classic Nokia phones.
-
