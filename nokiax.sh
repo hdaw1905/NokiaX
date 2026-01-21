@@ -17,6 +17,7 @@ ADB="adb"
 REMOVE_LIST="remove-list.txt"
 KEEP_LIST="keep-list.txt"
 LOG_FILE="removed.log"
+DEVICE_ID=""
 
 BANNER
 
@@ -48,7 +49,7 @@ fi
 echo "✓ adb ready"
 pause
 
-# STEP 3 — Guide USB Debugging
+# STEP 3 — Guide USB Debugging + Detect Devices
 clear
 BANNER
 
@@ -64,24 +65,72 @@ echo
 echo "Waiting for device..."
 
 while true; do
-  DEVICES=$(adb devices | sed 1d | awk '{print $2}')
+  DEVICE_LINES=$(adb devices | sed 1d | grep -v '^$')
+  DEVICE_COUNT=$(echo "$DEVICE_LINES" | wc -l)
 
-  if echo "$DEVICES" | grep -qw "device"; then
-    echo "✓ Device detected"
+  if [ "$DEVICE_COUNT" -ge 1 ]; then
     break
-  fi
-
-  if echo "$DEVICES" | grep -qw "unauthorized"; then
-    echo "⚠️  Device unauthorized. Check your phone and accept the RSA prompt."
-  fi
-
-  if echo "$DEVICES" | grep -qw "offline"; then
-    echo "⚠️  Device offline. Reconnect USB cable."
   fi
 
   sleep 2
 done
 
+# STEP 3.1 — Handle Multiple Devices
+if [ "$DEVICE_COUNT" -gt 1 ]; then
+  echo
+  echo "Multiple devices detected:"
+  echo "---------------------------"
+
+  i=1
+  declare -a DEVICE_IDS
+
+  while read -r line; do
+    ID=$(echo "$line" | awk '{print $1}')
+    STATUS=$(echo "$line" | awk '{print $2}')
+
+    if [ "$STATUS" = "device" ]; then
+      echo "[$i] $ID"
+      DEVICE_IDS+=("$ID")
+      ((i++))
+    fi
+  done <<< "$DEVICE_LINES"
+
+  echo
+  read -p "Select device number: " CHOICE
+
+  DEVICE_ID="${DEVICE_IDS[$((CHOICE-1))]}"
+
+  if [ -z "$DEVICE_ID" ]; then
+    echo "❌ Invalid selection."
+    exit 1
+  fi
+
+else
+  DEVICE_ID=$(echo "$DEVICE_LINES" | awk '{print $1}')
+fi
+
+# STEP 3.2 — Show Device Info
+MODEL=$(adb -s "$DEVICE_ID" shell getprop ro.product.model | tr -d '\r')
+BRAND=$(adb -s "$DEVICE_ID" shell getprop ro.product.brand | tr -d '\r')
+ANDROID_VER=$(adb -s "$DEVICE_ID" shell getprop ro.build.version.release | tr -d '\r')
+
+echo
+echo "📱 Connected Device:"
+echo "--------------------"
+echo "Brand:   $BRAND"
+echo "Model:   $MODEL"
+echo "Android: $ANDROID_VER"
+echo
+
+read -p "Is this the correct phone? (yes/no): " CONFIRM_DEVICE
+
+if [ "$CONFIRM_DEVICE" != "yes" ]; then
+  echo "❌ Aborted by user."
+  exit 0
+fi
+
+echo "✓ Using device: $DEVICE_ID"
+pause
 
 # STEP 4 — Validate remove list
 if [ ! -f "$REMOVE_LIST" ]; then
@@ -137,7 +186,7 @@ echo "---------------------"
 
 for pkg in "${FINAL_LIST[@]}"; do
   echo "Removing $pkg ..."
-  OUT=$(adb shell pm uninstall -k --user 0 "$pkg" 2>&1)
+  OUT=$(adb -s "$DEVICE_ID" shell pm uninstall -k --user 0 "$pkg" 2>&1)
 
   if echo "$OUT" | grep -q "Success"; then
     echo "✓ Removed $pkg"
@@ -146,7 +195,6 @@ for pkg in "${FINAL_LIST[@]}"; do
     echo "✗ Failed $pkg"
     echo "$(date) | $pkg | FAIL | $OUT" >> "$LOG_FILE"
   fi
-
 done
 
 # STEP 6 — Congratulations
