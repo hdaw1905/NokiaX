@@ -119,6 +119,163 @@ NokiaX is designed to keep only essential and functional apps:
 
 ---
 
+## 🪟 Windows Users – Important Fixes (PATH Errors)
+
+If you see any of these errors when running NokiaX:
+
+- `python not found`  
+- `pip not found`  
+- `adb not found`  
+
+It means Windows does **not know where Python or ADB is installed**.  
+You must manually add them to the **PATH**.
+
+---
+
+## ❓ What is PATH?
+
+PATH is a Windows setting that tells the system where programs are located.  
+If Python or ADB is not in PATH, Windows cannot run them from the terminal.
+
+---
+
+## ✅ Step-by-Step: Fix PATH on Windows 10 / 11
+
+### 1️⃣ Open Environment Variables
+
+1. Click the **Start Menu**  
+2. Type:  
+
+    environment variables  
+
+3. Click:  
+**Edit the system environment variables**  
+4. In the new window, click:  
+**Environment Variables...**
+
+---
+
+### 2️⃣ Find the PATH Variable
+
+In the **Environment Variables** window:
+
+- Look at the **top section**:  
+**User variables for YOURNAME**
+
+- Find:  
+
+    Path  
+
+- Click **Path**  
+- Click **Edit...**
+
+---
+
+### 3️⃣ Add Python to PATH
+
+Click **New** and paste each line **one by one**:
+
+    C:\Users\YOURNAME\AppData\Local\Programs\Python\Python311  
+    C:\Users\YOURNAME\AppData\Local\Programs\Python\Python311\Scripts\  
+
+> ⚠️ Replace `YOURNAME` with your actual Windows username  
+> Example:  
+> C:\Users\Husham\AppData\Local\Programs\Python\Python311  
+
+---
+
+### 4️⃣ Add ADB (Platform Tools) to PATH
+
+Click **New** again and paste:
+
+    C:\platform-tools  
+
+> ⚠️ Make sure this folder actually exists  
+> ⚠️ If you extracted platform-tools somewhere else, use that path instead
+
+---
+
+### 5️⃣ Save Changes
+
+1. Click **OK**  
+2. Click **OK** again  
+3. Click **OK** again to close all windows  
+
+---
+
+### 6️⃣ Restart Your Computer
+
+> ❗ **THIS STEP IS REQUIRED**  
+Windows will not apply PATH changes until you restart.
+
+---
+
+## 🔍 Verify Everything Works
+
+After restarting:
+
+1. Open **Command Prompt** or **Git Bash**  
+2. Run:
+
+    python --version  
+    pip --version  
+    adb version  
+
+If all three commands show version numbers → ✅ **You’re good to go**
+
+---
+
+## 🛑 If It Still Doesn’t Work
+
+### A) Check Python Installation Folder
+
+Go to:
+
+    C:\Users\YOURNAME\AppData\Local\Programs\Python\  
+
+Open the folder inside (for example: `Python311`)  
+Use that **exact path** in PATH.
+
+---
+
+### B) Disable Windows Store Python Aliases
+
+1. Open **Settings**  
+2. Go to **Apps**  
+3. Click **Advanced app settings**  
+4. Click **App execution aliases**  
+5. Turn **OFF**:
+
+- python.exe  
+- python3.exe  
+- pip.exe  
+
+Restart your PC.
+
+---
+
+## 🎯 Summary
+
+If NokiaX says:
+
+- `python not found`  
+- `pip not found`  
+- `adb not found`  
+
+Then:
+
+1. Open **Environment Variables**  
+2. Edit **Path**  
+3. Add Python and ADB folders  
+4. Restart your PC  
+5. Verify with:
+
+    python --version  
+    pip --version  
+    adb version  
+
+---
+
 ## 📦 Python / pip Requirements
 
 Install required Python packages:
