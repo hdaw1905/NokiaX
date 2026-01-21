@@ -101,6 +101,7 @@ NokiaX is designed to keep only essential and functional apps:
 - Android device  
 - USB cable  
 - USB debugging enabled  
+- Internet connection  
 
 ### Linux / macOS
 - Bash shell  
@@ -122,30 +123,45 @@ NokiaX is designed to keep only essential and functional apps:
 
 Install required Python packages:
 
-    pip install --upgrade pip
-    pip install adb
+pip install --upgrade pip  
+pip install adb  
 
-> Note: pip install adb is unreliable on some systems.  
-> Best practice is installing Android platform-tools manually.  
+> ⚠️ Note:  
+> pip install adb is unreliable on some systems.  
+> Best practice is installing Android SDK Platform-Tools manually.  
 > The script attempts both methods.
+
+---
+
+## 🔗 Install Android SDK Platform-Tools (Recommended)
+
+Platform-Tools provides the official and most reliable version of adb.
+
+Official Website:  
+https://developer.android.com/tools/releases/platform-tools  
+
+Why this is recommended:
+- Includes adb and fastboot  
+- More stable than pip install adb  
+- Backward compatible with older Android versions  
+- Updated directly by Google  
+
+If you already have Android Studio installed, you can use the copy it installed.  
+Otherwise, download the standalone Platform-Tools package.
 
 ---
 
 ## ⚡ Installation
 
-Clone the repository and prepare the script:
-
-    git clone https://github.com/hdaw1905/nokiax.git
-    cd nokiax
-    chmod +x nokiax.sh
+git clone https://github.com/hdaw1905/nokiax.git  
+cd nokiax  
+chmod +x nokiax.sh  
 
 ---
 
 ## ▶️ Run NokiaX
 
-Run the script:
-
-    ./nokiax.sh
+./nokiax.sh  
 
 NokiaX will:
 
@@ -160,66 +176,58 @@ NokiaX will:
 
 ## ✏️ Customize Which Apps Are Removed
 
-Open this file:
-
-    remove-list.txt
-
-Add or remove any Android package name you want.
+Open:  
+remove-list.txt  
 
 Example:
 
-    # Social media
-    com.facebook.katana
-    com.instagram.android
-    com.zhiliaoapp.musically
-    com.snapchat.android
-    com.twitter.android
+# Social media  
+com.facebook.katana  
+com.instagram.android  
+com.zhiliaoapp.musically  
+com.snapchat.android  
+com.twitter.android  
 
-    # Browsers
-    com.android.chrome
-    com.sec.android.app.sbrowser
-    com.opera.browser
+# Browsers  
+com.android.chrome  
+com.sec.android.app.sbrowser  
+com.opera.browser  
 
-    # Video
-    com.google.android.youtube
-    com.netflix.mediaclient
+# Video  
+com.google.android.youtube  
+com.netflix.mediaclient  
 
-Save the file and rerun:
-
-    ./nokiax.sh
+Save and rerun:  
+./nokiax.sh  
 
 ---
 
 ## 🛡 Protect Important Apps
 
-Edit:
-
-    keep-list.txt
-
-Any package listed here will NEVER be removed.
+Open:  
+keep-list.txt  
 
 Example:
 
-    com.android.dialer
-    com.android.contacts
-    com.android.settings
-    com.whatsapp
-    com.google.android.apps.maps
+com.android.dialer  
+com.android.contacts  
+com.android.settings  
+com.whatsapp  
+com.google.android.apps.maps  
 
 ---
 
 ## 🧾 Logs
 
-All removed apps are saved to:
-
-    removed.log
+All removed apps are saved to:  
+removed.log  
 
 ---
 
 ## ⚠️ Notes (Important)
 
 - pip install adb is unreliable on some systems  
-- Best practice is Android platform-tools  
+- Best practice is Android SDK Platform-Tools  
 - Script handles both cases  
 
 ---
