@@ -6,7 +6,10 @@ NokiaX is a one-click Bash + ADB tool that transforms any Android smartphone int
 
 It removes social media, browsers, video apps, and other addictive software while keeping only basic and important apps like calls, messages, camera, music, radio, games, navigation, and messaging apps.
 
+> ⚠️ **Important:** Before attempting any steps, please read the **NokiaX_UserGuide.pdf** carefully for step-by-step instructions. Skipping the guide may result in unintended app removals or system issues.
+
 ---
+
 
 ## ✨ Features
 
